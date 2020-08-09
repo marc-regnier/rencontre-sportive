@@ -1,0 +1,31 @@
+body{
+    background-image: url('../images/sport.jpg');
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: white;
+    
+
+}
+
+.sport{
+    height: auto;
+    width: auto;
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
+}
+
+.sport-list{
+
+    background-color: white;
+    color: black;
+    height: 100%;
+    width: 100%;
+
+}
+
+
+.card-img-top{
+    height: 550px;
+}
