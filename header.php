@@ -30,7 +30,7 @@ require_once 'functions.php';
         <a class="nav-link" href="meet.php">Rencontre</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="subscribe.php">Inscription</a>
+        <a class="nav-link" href="ajout.php">Inscription</a>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="login.php">Connexion</a>

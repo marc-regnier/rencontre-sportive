@@ -45,7 +45,8 @@ if (isset($_POST['email'])) {
                 <label for="exampleInputPassword1">Mot de passe</label>
                 <input type="password" class="form-control" id="exampleInputPassword1" name="password" placeholder="Saisir votre mot de passe" value="<?= $pass ?>">
             </div>
-            <a class="btn btn-primary" type="submit">Valider</a>
+            <input class="btn btn-primary" type="submit"  value="Je me connecte">
+
         </fieldset>
     </form>
     </body>
