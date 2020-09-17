@@ -40,15 +40,14 @@ require_once 'header.php';
     ?>
     </select>
 </div>
-
 <div class="form-group">
     <label for="exampleSelect1">Niveau :</label>
       <select class="form-control" name="level" id="exampleSelect1">
       <?php 
-      $req = queryMySql("SELECT niveau FROM practice");
-      $niveau = $req->fetchAll(PDO::FETCH_COLUMN);
-      foreach ($niveau as $name => $value){
-          echo "<option>$value</option>";
+      $req = queryMySql("SELECT * FROM level");
+      while ($niveau = $req->fetch()){?>
+          <option value="<?=$niveau['id']?>"><?=$niveau['niveau']?></option>;
+      <?php
       }
     ?>
     </select>
