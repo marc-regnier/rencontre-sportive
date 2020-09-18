@@ -24,7 +24,7 @@ require_once 'header.php';
 </div>
 <div class="form-group">
     <label for="exampleInputPassword1">Mot de Passe :</label>
-    <input type="password" name="password" class="form-control" id="exampleInputPassword1" placeholder="email">
+    <input type="password" name="password" class="form-control" id="exampleInputPassword1" placeholder="mot de passe">
 </div>
 
 <div class="form-group">
@@ -32,10 +32,10 @@ require_once 'header.php';
       <select class="form-control" name="sport" id="exampleSelect1">
       <option>Choisissez!</option>
       <?php 
-      $req = queryMySql("SELECT name FROM sport");
-      $sport = $req->fetchAll(PDO::FETCH_COLUMN);
-      foreach ($sport as $name => $value){
-          echo "<option>$value</option>";
+      $req = queryMySql("SELECT * FROM sport");
+      while ($sport = $req->fetch()){?>
+          <option value="<?=$sport['id']?>"><?=$sport['name']?></option>;
+      <?php
       }
     ?>
     </select>
