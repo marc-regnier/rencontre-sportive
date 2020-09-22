@@ -13,6 +13,7 @@ function queryMySql($query){
     return $result;
 }
 
+
 function destroySession(){
     $_SESSION =[];
 

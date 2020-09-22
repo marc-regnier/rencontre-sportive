@@ -5,7 +5,7 @@ require_once 'header.php';
 <section class="sport text-center">
     <article class="sport-list container mb-5">
         <h1 class="text-center">Bienvenue sur SportBook!</h1>
-        <p>Discutez de vos sports favoris et rencontrez-vous</p>
+        <p>Discutez de votre sport favoris et rencontrez-vous</p>
 
         <h2>Voici la liste des sports :</h2>
         <div class="row text-center">
