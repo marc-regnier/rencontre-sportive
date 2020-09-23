@@ -2,13 +2,14 @@
 require_once 'header.php';
 ?>
 <h1 class="text-center">Inscription à Sportbook</h1>
-<form class="container" action="verification.php" method="post">
+<form class="container" action="verification.php" method="post" enctype="multipart/form-data">
 
 <div class="form-group">
     <label for="exampleInputPassword1">Photo ou Image :</label>
-    <input type='file' name="image" id="image"  class="form-control" />
-    <img id="previewHolder" width="250px" height="250px" />
+    <input type="file" name="image" id="image"  class="form-control" />
+    
 </div>
+<img id="previewHolder" width="250px" height="250px" />
 
 <div class="form-group">
     <label for="exampleInputEmail1">Nom :</label>
@@ -79,3 +80,6 @@ require_once 'header.php';
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script src="assets/js/app.js"></script>
+<?php
+require_once 'footer.php';
+?>
