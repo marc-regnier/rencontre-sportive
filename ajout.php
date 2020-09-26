@@ -1,39 +1,53 @@
 <?php
+require("session.class.php");
+$session = new Session();
+
+
 require_once 'header.php';
+$session->flash();
+
 ?>
-<h1 class="text-center">Inscription à Sportbook</h1>
-<form class="container" action="verification.php" method="post" enctype="multipart/form-data">
+
+<section class="container mt-5 mb-5 form-subscription">
+<h1 class="text-center color">Inscription à Sportbook</h1>
+
+<form class="mb-5"  action="verification.php" method="post" enctype="multipart/form-data">
 
 <div class="form-group">
     <label for="exampleInputPassword1">Photo ou Image :</label>
     <input type="file" name="image" id="image"  class="form-control" />
-    
+    <p class="comments"></p>
 </div>
 <img id="previewHolder" width="250px" height="250px" />
 
 <div class="form-group">
     <label for="exampleInputEmail1">Nom :</label>
     <input type="text" name="name" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="nom">
+    <p class="comments"></p>
 </div>
 
 <div class="form-group">
     <label for="exampleInputPassword1">Prénom :</label>
     <input type="text" name="firstname" class="form-control" id="exampleInputPassword1" placeholder="prenom">
+    <p class="comments"></p>
 </div>
 
 <div class="form-group">
     <label for="exampleInputEmail1">Département :</label>
-    <input type="text" class="form-control" name="department" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="departement">    
+    <input type="text" class="form-control" name="department" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="departement">
+    <p class="comments"></p>    
 </div>
 
 <div class="form-group">
     <label for="exampleInputPassword1">Email :</label>
     <input type="email" name="email" class="form-control" id="exampleInputPassword1" placeholder="email">
+    <p class="comments"></p>
 </div>
 
 <div class="form-group">
     <label for="exampleInputPassword1">Mot de Passe :</label>
     <input type="password" name="password" class="form-control" id="exampleInputPassword1" placeholder="mot de passe">
+    <p class="comments"></p>
 </div>
 
 <div class="form-group">
@@ -43,6 +57,7 @@ require_once 'header.php';
       <option value="m">Masculin</option>
       <option value="f">Féminin</option>
     </select>
+    <p class="comments"></p>
   </div>
 
 <div class="form-group">
@@ -57,6 +72,7 @@ require_once 'header.php';
       }
     ?>
     </select>
+    <p class="comments"></p>
 </div>
 
 <div class="form-group">
@@ -70,6 +86,7 @@ require_once 'header.php';
       }
     ?>
     </select>
+    <p class="comments"></p>
 </div>
 
 <div class="text-center">
@@ -77,6 +94,8 @@ require_once 'header.php';
     <input class="btn btn-danger" type="reset" value="Annuler">
 </div>
 </form>
+</section>
+
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script src="assets/js/app.js"></script>

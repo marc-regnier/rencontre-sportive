@@ -1,11 +1,12 @@
 <?php
 require_once 'header.php';
+require_once 'functions.php';
 
 $error = $mail = $pass = "";
 
 if (isset($_POST['email'])) {
-    $mail = htmlspecialchars($_POST['email']);
-    $pass = htmlspecialchars($_POST['password']);
+    $mail = security($_POST['email']);
+    $pass =security($_POST['password']);
 
 
 

@@ -6,15 +6,30 @@ catch(Exception $e){
     die('Erreur : '.$e->getMessage());
 }
 
-function queryMySql($query){
+function queryMySql($query)
+{
     global $bdd;
     $result = $bdd->query($query);
     if (!$result) die("Erreur fatale");
     return $result;
 }
 
+function isEmail($email) 
+    {
+        return filter_var($email, FILTER_VALIDATE_EMAIL);
+    }
 
-function destroySession(){
+
+function security($data) 
+    {
+      $data = trim($data);
+      $data = stripslashes($data);
+      $data = htmlspecialchars($data);
+      return $data;
+    }
+
+function destroySession()
+{
     $_SESSION =[];
 
     if (session_id() != "" || isset($_COOKIE[session_name()]))
