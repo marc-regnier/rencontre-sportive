@@ -1,10 +1,6 @@
 <?php
-require("session.class.php");
-$session = new Session();
-
-
 require_once 'header.php';
-$session->flash();
+
 
 ?>
 
@@ -16,38 +12,32 @@ $session->flash();
 <div class="form-group">
     <label for="exampleInputPassword1">Photo ou Image :</label>
     <input type="file" name="image" id="image"  class="form-control" />
-    <p class="comments"></p>
 </div>
 <img id="previewHolder" width="250px" height="250px" />
 
 <div class="form-group">
     <label for="exampleInputEmail1">Nom :</label>
     <input type="text" name="name" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="nom">
-    <p class="comments"></p>
 </div>
 
 <div class="form-group">
     <label for="exampleInputPassword1">Prénom :</label>
     <input type="text" name="firstname" class="form-control" id="exampleInputPassword1" placeholder="prenom">
-    <p class="comments"></p>
 </div>
 
 <div class="form-group">
     <label for="exampleInputEmail1">Département :</label>
-    <input type="text" class="form-control" name="department" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="departement">
-    <p class="comments"></p>    
+    <input type="text" class="form-control" name="department" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="departement">    
 </div>
 
 <div class="form-group">
     <label for="exampleInputPassword1">Email :</label>
     <input type="email" name="email" class="form-control" id="exampleInputPassword1" placeholder="email">
-    <p class="comments"></p>
 </div>
 
 <div class="form-group">
     <label for="exampleInputPassword1">Mot de Passe :</label>
     <input type="password" name="password" class="form-control" id="exampleInputPassword1" placeholder="mot de passe">
-    <p class="comments"></p>
 </div>
 
 <div class="form-group">
@@ -57,7 +47,6 @@ $session->flash();
       <option value="m">Masculin</option>
       <option value="f">Féminin</option>
     </select>
-    <p class="comments"></p>
   </div>
 
 <div class="form-group">
@@ -72,7 +61,6 @@ $session->flash();
       }
     ?>
     </select>
-    <p class="comments"></p>
 </div>
 
 <div class="form-group">
@@ -86,7 +74,6 @@ $session->flash();
       }
     ?>
     </select>
-    <p class="comments"></p>
 </div>
 
 <div class="text-center">

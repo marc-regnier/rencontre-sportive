@@ -14,11 +14,6 @@ function queryMySql($query)
     return $result;
 }
 
-function isEmail($email) 
-    {
-        return filter_var($email, FILTER_VALIDATE_EMAIL);
-    }
-
 
 function security($data) 
     {
@@ -28,6 +23,8 @@ function security($data)
       return $data;
     }
 
+
+
 function destroySession()
 {
     $_SESSION =[];
@@ -36,4 +33,20 @@ function destroySession()
     setcookie(session_name(), '', time()-2592000, '/');
 
     session_destroy();
+}
+
+function showProfile($user){
+    if(file_exists("$user.jpg"))
+    echo "<img src='$user.jpg' style='float:left;'>";
+
+    $result = queryMysql("SELECT * FROM user WHERE mail = '$user'");
+
+    if($result->rowCount()){
+        $row = $result->fetch(PDO::FETCH_ASSOC);
+        echo stripslashes($row['text']) . "<br style='clear:left;'><br>";
+
+
+
+    }
+    else echo"<p>Rien à voir ici pour l'instant</p><br>";
 }

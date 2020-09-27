@@ -1,8 +1,9 @@
 <?php
 require_once 'header.php';
+
 ?>
-<link rel="stylesheet" href="assets/css/style.css">
 <section class="sport text-center">
+
     <article class="sport-list container mb-5">
         <h1 class="text-center">Bienvenue sur SportBook!</h1>
         <p>Discutez de votre sport favoris et rencontrez-vous</p>

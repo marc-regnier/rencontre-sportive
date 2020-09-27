@@ -33,8 +33,9 @@ $allowTypes = array('jpg','png','jpeg','gif');
             queryMySql("INSERT INTO user (lastname, firstname, department, mail, password, image_cover, gender, id_niveau, id_sport) 
             VALUES('$name', '$firstname', '$department', '$email', '$password_crypt', '$fileName', '$gender', '$level', '$sport')");
 
-            header("location: login.php");
+            
             }
+            header("location: login.php");
         }
         
 }

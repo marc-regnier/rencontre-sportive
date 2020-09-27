@@ -1,4 +1,9 @@
 <?php
+require("session.class.php");
+$session = new Session();
+$session->flash();
+session_write_close();
+session_start();
 
 require_once 'functions.php';
 
@@ -15,8 +20,21 @@ require_once 'functions.php';
 </head>
 
 <body>
+<?php 
+  
+  if(isset($_SESSION['user'])){
+    $user = $_SESSION['user'];
+    $loggedin = TRUE;
+     
+  }
+  else{
+    $loggedin = FALSE;
+  }
+?>
 <header>
-<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+<?php 
+if($loggedin){?>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
   <a class="navbar-brand" href="#">SportBook!</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
@@ -28,8 +46,30 @@ require_once 'functions.php';
         <a class="nav-link" href="index.php">Accueil</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="meet.php">Rencontre</a>
+        <a class="nav-link" href="meet.php">Membres</a>
       </li>
+      <li class="nav-item">
+        <a class="nav-link" href="profil.php">Profil</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="logout.php">Logout</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+<?php } else { ?>
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+  <a class="navbar-brand" href="#">SportBook!</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarColor01">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item">
+        <a class="nav-link" href="index.php">Accueil</a>
+      </li>
+      
       <li class="nav-item">
         <a class="nav-link" href="ajout.php">Inscription</a>
       </li>
@@ -39,5 +79,6 @@ require_once 'functions.php';
     </ul>
   </div>
 </nav>
+<?php } ?>
 </header>
     
