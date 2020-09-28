@@ -52,5 +52,19 @@ footer
 
 .btn{
     margin-bottom: 10px;
+    
 }
+
+.profile{
+    display: flex;
+    flex-direction: row;
+}
+
+.text{
+    text-align: justify;
+    overflow: hidden;
+    padding: 15px;
+}
+
+
     

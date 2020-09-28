@@ -45,7 +45,7 @@ else if($gender == "m" && empty($fileName) && isset($name) && !empty($name) && i
     $filename = "masculin_default.jpg";
     
     $password_crypt = password_hash($password, PASSWORD_DEFAULT);
-    var_dump($filename);
+    
     
     queryMySql("INSERT INTO user (lastname, firstname, department, mail, password, image_cover, gender, id_niveau, id_sport)
      VALUES('$name', '$firstname', '$department', '$email', '$password_crypt', '$filename', '$gender', '$level', '$sport')");

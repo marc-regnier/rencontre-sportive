@@ -34,19 +34,3 @@ function destroySession()
 
     session_destroy();
 }
-
-function showProfile($user){
-    if(file_exists("$user.jpg"))
-    echo "<img src='$user.jpg' style='float:left;'>";
-
-    $result = queryMysql("SELECT * FROM user WHERE mail = '$user'");
-
-    if($result->rowCount()){
-        $row = $result->fetch(PDO::FETCH_ASSOC);
-        echo stripslashes($row['text']) . "<br style='clear:left;'><br>";
-
-
-
-    }
-    else echo"<p>Rien à voir ici pour l'instant</p><br>";
-}

@@ -10,9 +10,6 @@ if (isset($_POST['email'])) {
     $mail = security($_POST['email']);
     $pass = security($_POST['password']);
 
-
-
-
     if ($mail == "" || $pass == ""){
         $session = new Session();
         $session->setFlash('ERREUR ! SVP Veuillez remplir tous les champs du formulaire de connexion');
@@ -25,7 +22,7 @@ if (isset($_POST['email'])) {
         $passCorrect = password_verify($pass, $result['password']);
 
         if ($passCorrect) {
-            $_SESSION['email'] = $mail;
+            $_SESSION['user'] = $mail;
             $_SESSION['password'] = $pass;
             $session = new Session();
             $session->setFlash('Vous êtes connecté', 'success');
