@@ -26,7 +26,7 @@ if (isset($_POST['email'])) {
             $_SESSION['password'] = $pass;
             $session = new Session();
             $session->setFlash('Vous êtes connecté', 'success');
-            header("location: login.php");
+            header("location: profil.php");
         } else {
             
             $session = new Session();

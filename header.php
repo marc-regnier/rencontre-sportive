@@ -46,7 +46,7 @@ if($loggedin){?>
         <a class="nav-link" href="index.php">Accueil</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="meet.php">Membres</a>
+        <a class="nav-link" href="member.php">Membres</a>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="profil.php">Profil</a>
