@@ -52,7 +52,7 @@ require_once 'header.php';
                    <?php } 
                    else 
                    { ?>
-                        <a href="member.php?remove=<?= $member['mail'] ?>" class="btn btn-danger">supprimer la demande</a>
+                        <a href="member.php?remove=<?= $member['mail'] ?>" class="btn btn-danger">supprimer le lien</a>
                    <?php }
 
                    if(($t1 + $t2) > 1)

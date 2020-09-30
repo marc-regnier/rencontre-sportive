@@ -52,7 +52,13 @@ if($loggedin){?>
         <a class="nav-link" href="profil.php">Profil</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="logout.php">Logout</a>
+        <a class="nav-link" href="friends.php">Amis</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="message.php">Message</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="logout.php">Déconnexion</a>
       </li>
     </ul>
   </div>

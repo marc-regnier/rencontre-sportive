@@ -1,8 +1,11 @@
 body{
     background-image: url('../images/sport/sport.jpg');
-    background-position: center center;
+    background-position: center center fixed;
     background-repeat: no-repeat;
     background-size: cover;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
     
 
 }
@@ -64,6 +67,10 @@ footer
     text-align: justify;
     overflow: hidden;
     padding: 15px;
+}
+
+.list-friend{
+    background-color: white;
 }
 
 
