@@ -1,12 +1,9 @@
 <?php
-require_once 'header.php';
+require_once 'header/header.php';
 
-$view = security($_GET['mail']);
-
-$req = queryMySql("SELECT * FROM user WHERE mail = '$view'");
+$view = security($_GET['username']);
+$req = queryMySql("SELECT * FROM user WHERE username = '$view'");
 $member = $req->fetch();
-
-
 
 ?>
 
@@ -18,5 +15,7 @@ $member = $req->fetch();
         <?= $member['description'] ?>
     </div>
 </div>
-    <button class="btn btn-primary mt-4"><a href="">Laisser un message</a></button>
+<?php
+require_once 'header/footer.php';
+?>
 

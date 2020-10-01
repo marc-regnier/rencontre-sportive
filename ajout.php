@@ -1,5 +1,5 @@
 <?php
-require_once 'header.php';
+require_once 'header/header.php';
 
 
 ?>
@@ -7,7 +7,7 @@ require_once 'header.php';
 <section class="container mt-5 mb-5 form-subscription">
 <h1 class="text-center color">Inscription à Sportbook</h1>
 
-<form class="mb-5"  action="verification.php" method="post" enctype="multipart/form-data">
+<form class="mb-5"  action="check/verification.php" method="post" enctype="multipart/form-data">
 
 <div class="form-group">
     <label for="exampleInputPassword1">Photo ou Image :</label>
@@ -31,8 +31,8 @@ require_once 'header.php';
 </div>
 
 <div class="form-group">
-    <label for="exampleInputPassword1">Email :</label>
-    <input type="email" name="email" class="form-control" id="exampleInputPassword1" placeholder="email">
+    <label for="exampleInputPassword1">Username :</label>
+    <input type="text" name="username" class="form-control" id="exampleInputPassword1" placeholder="email">
 </div>
 
 <div class="form-group">
@@ -87,5 +87,5 @@ require_once 'header.php';
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script src="assets/js/app.js"></script>
 <?php
-require_once 'footer.php';
+require_once 'header/footer.php';
 ?>

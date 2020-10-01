@@ -1,6 +1,5 @@
 <?php
-require_once 'header.php';
-require_once 'functions.php';
+require_once 'header/header.php';
 
 
 if(!$loggedin){
@@ -8,12 +7,9 @@ if(!$loggedin){
 }
 
 
-$req = queryMySql("SELECT * FROM user WHERE mail = '$user'");
+$req = queryMySql("SELECT * FROM user WHERE username = '$user'");
 $member = $req->fetch();
-$title = ($member['gender'] == 'm') ? 'Monsieur' : 'Madame';
-
-
-
+$title = ($member['gender'] == 'm') ? 'M.' : 'Mme';
 
 ?>
 
@@ -27,7 +23,7 @@ $title = ($member['gender'] == 'm') ? 'Monsieur' : 'Madame';
     </div>
    
 </div>
-<form action="checkProfil.php" method="post" enctype="multipart/form-data">
+<form action="check/checkProfil.php" method="post" enctype="multipart/form-data">
 <div class="form-group">
     <label for="exampleInputPassword1">Photo ou Image :</label>
     <input type="file" name="image" id="image"  class="form-control" />
@@ -52,7 +48,7 @@ $title = ($member['gender'] == 'm') ? 'Monsieur' : 'Madame';
     var editor =  CKEDITOR.replace( 'editor' );
 </script>
 <?php 
-require_once 'footer.php';
+include 'header/footer.php';
 
 ?>
 

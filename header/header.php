@@ -1,11 +1,12 @@
 <?php
-require("session.class.php");
+
+require_once ('class/session.class.php');
 $session = new Session();
 $session->flash();
 session_write_close();
 session_start();
 
-require_once 'functions.php';
+require_once ('functions/functions.php');
 
 ?>
 <!DOCTYPE html>

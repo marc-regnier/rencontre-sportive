@@ -1,12 +1,13 @@
 <?php 
-require_once 'header.php';
+include ('header/header.php');
+
 
 ?>
 
 <section class="member text-center">
 
     <article class="member-list container mb-5">
-
+    <div class="row">
 <?php
             
 
@@ -15,15 +16,15 @@ require_once 'header.php';
             $req = queryMySql("SELECT * FROM user INNER JOIN sport ON user.id_sport = sport.id INNER JOIN level ON user.id_niveau = level.id");
             while ($member = $req->fetch()) 
             { 
-                if ($member['mail'] == $user) continue; ?>
- <div class = "col-md-6 mt-5">
+                if ($member['username'] == $user) continue; ?>
+ <div class = "col-md-4 mt-5">
      <div class = "row">
         <div class="card card-img" style="width : 18rem; ">
-            <img class="card-img-top" style="height : 250px;" src="assets/images/uploads/<?= $member['image_cover']?>" alt="Card image cap">
+            <img class="card-img-top" style="height : 250px;" src="../assets/images/uploads/<?= $member['image_cover']?>" alt="Card image cap">
             <div class="card-body">
                 <h5 class="card-title"><?= $member['lastname']?> <?=$member['firstname']?></h5>
                 <p class="card-text "><?= $member['name'] ?> - <?= $member['niveau'] ?></p>
-                <a href="pageProfile.php?mail=<?= $member['mail'] ?>" class="btn btn-primary">Plus d'infos</a>
+                <a href="pageProfile.php?username=<?= $member['username'] ?>" class="btn btn-primary">Plus d'infos</a>
                 <?php 
                     if(isset($_GET['add']))
                     {
@@ -41,18 +42,18 @@ require_once 'header.php';
                     }
                     
 
-                    $result1 = queryMySql("SELECT * FROM friends WHERE user='" .$member['mail'] ."' AND friend = '$user'");
+                    $result1 = queryMySql("SELECT * FROM friends WHERE user='" .$member['username'] ."' AND friend = '$user'");
                     $t1 = $result1->rowCount();
-                    $result1 = queryMySql("SELECT * FROM friends WHERE user = '$user' AND friend='" . $member['mail'] . "'");
+                    $result1 = queryMySql("SELECT * FROM friends WHERE user = '$user' AND friend='" . $member['username'] . "'");
                     $t2 = $result1->rowCount();
 
                     if (!$t1)
                     {?>
-                        <a href="member.php?add=<?= $member['mail'] ?>" class="btn btn-primary">Suivre</a>
+                        <a href="member.php?add=<?= $member['username'] ?>" class="btn btn-primary">Suivre</a>
                    <?php } 
                    else 
                    { ?>
-                        <a href="member.php?remove=<?= $member['mail'] ?>" class="btn btn-danger">supprimer le lien</a>
+                        <a href="member.php?remove=<?= $member['username'] ?>" class="btn btn-danger">supprimer le lien</a>
                    <?php }
 
                    if(($t1 + $t2) > 1)
@@ -66,6 +67,7 @@ require_once 'header.php';
                     else if ($t2)
                 
                         echo "<p>Cette personne vous suit</p>";
+                    else echo "<p>aucun lien d'amitié</p>";
                     ?>
             </div>
         </div>
@@ -73,11 +75,11 @@ require_once 'header.php';
 </div>
 
 <?php } ?>
-
+</div>
     </article>
 
 </section>
 
 <?php
-require_once 'footer.php';
+include 'header/footer.php';
 ?>

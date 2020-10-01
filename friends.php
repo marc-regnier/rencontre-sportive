@@ -1,5 +1,5 @@
 <?php
-require_once 'header.php';
+require_once 'header/header.php';
 
 if(!$loggedin){
     header("location: login.php");
@@ -76,5 +76,5 @@ if(!$friends) echo "<br>Vous n'avez pas encore d'ami.";
 
 ?>
 <?php
-require_once 'footer.php';
+require_once 'header/footer.php';
 ?>

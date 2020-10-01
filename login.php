@@ -1,21 +1,17 @@
 <?php
-
-
-require_once 'header.php';
+require_once ('header/header.php');
 
 
 ?>
-
-
 <div class="container card mt-4">
 
-    <form action="checklog.php" method="POST">
+    <form action="check/checklog.php" method="POST">
         <fieldset>
             <legend class="text-center card-title">Connectez-vous</legend>
             
             <div class="form-group">
-                <label for="exampleInputEmail1">Email </label>
-                <input type="email" class="form-control" id="exampleInputEmail1" name="email" aria-describedby="emailHelp" placeholder="Entez votre email">
+                <label for="exampleInputEmail1">Username </label>
+                <input type="text" class="form-control" id="exampleInputEmail1" name="username" placeholder="Entez votre username">
 
             </div>
             <div class="form-group">
@@ -31,7 +27,7 @@ require_once 'header.php';
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script src="assets/js/app.js"></script>
 <?php
-require_once 'footer.php';
+require_once ('header/footer.php');
 ?>
 
 

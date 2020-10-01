@@ -1,5 +1,5 @@
 <?php
-require_once 'header.php';
+require_once 'header/header.php';
 
 if(!$loggedin){
     header("location: login.php");
@@ -25,7 +25,7 @@ if($view != "")
         $name1 = $name2 = "Vos";
         echo "<div class='container list-friend mt-5'><h3>$name1 messages</h3>";
     }else{
-        $name1 = "<a href='members.php?view=$view'>$view</a>";
+        $name1 = "<a href='member.php?view=$view'>$view</a>";
         $name2 = "$view -";
         echo "<div class='container list-friend mt-5'><h3>Messages de $name1</h3>";
     }
@@ -43,8 +43,9 @@ if($view != "")
         <input type="radio" name="pm" id="private" value="1" checked>
         <label for="private">Privé</label>
     </fieldset>
-    <textarea name="text"></textarea>
-    <input type="submit" value="Publier le message">
+    <textarea class="container-fluid" name="text" rows="5" cols="33">
+    </textarea>
+    <input type="submit" value="Publier le message" class="btn btn-primary">
 </form>
 
 <br>
@@ -75,12 +76,12 @@ for($j = 0; $j < $num; ++$j)
     if($row['pm'] == 0 || $row['auth'] == $user || $row['recip'] == $user)
     {
         echo date('d/m \à H \h i', $row['time']);
-        echo "<a href='message.php?view=". $row['auth'] . "'>" . $row['auth'] . "</a>";
+        echo "<a href='message.php?view=". $row['auth'] . "'> " . $row['auth'] . "</a> ";
 
     if($row['pm'] == 0)
-        echo "a écrit&nbsp;: <span class='whisper'>&laquo;&nbsp" .  $row['message'] . "&nbsp;&raquo;";
+        echo "a écrit&nbsp;: <span class='whisper'>&laquo;&nbsp" .  $row['message'] . " &nbsp;&raquo;";
     else
-        echo "a chuchoté&nbsp;: <span class='whisper'>&laquo;&nbsp;" . $row['message'] . "&nbsp;&raquo;</span>";
+        echo "a chuchoté&nbsp;: <span class='whisper'>&laquo;&nbsp;" . $row['message'] . " &nbsp;&raquo;</span>";
     if($row['recip'] == $user)
         echo "[<a href='message.php?view=$view" . "&erase=" .  $row['id'] . "'>suppr.</a>]";
 
@@ -91,10 +92,10 @@ for($j = 0; $j < $num; ++$j)
 
 if(!$num)
     echo "<br><span class='info'>Aucun message</span><br><br>";
-    echo "<br><a class='btn btn-success' href='message.php?view=$view'>Actualiser</a>";
+    echo "<br><a class='btn btn-success container-fluid' href='message.php?view=$view'>Actualiser</a>";
     echo "</div>";
 ?>
 
 <?php
 
-require_once 'footer.php';
+require_once 'header/footer.php';

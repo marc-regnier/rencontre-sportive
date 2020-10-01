@@ -1,16 +1,16 @@
 <?php
 require_once 'header.php';
-require_once 'functions.php';
 
-$req = queryMySql("SELECT * FROM user WHERE mail = '$user'");
+$req = queryMySql("SELECT * FROM user WHERE username = '$user'");
 $member = $req->fetch();
 
 if (isset($_POST['editor'])){
     $text = $_POST['editor'];
 
     if($req->rowCount())
-        queryMysql("UPDATE user SET description = '$text' WHERE mail = '$user'");
+        queryMysql("UPDATE user SET description = '$text' WHERE username = '$user'");
     else queryMySql("INSERT INTO user VALUES ('$user', '$text')");
+    header("location: profil.php");
 }else{
     header("location: profil.php");
 }
@@ -28,7 +28,7 @@ if(isset($_FILES["image"]["name"])){
             if(move_uploaded_file($_FILES["image"]["tmp_name"], $targetFilePath))
             {
 
-                queryMysql("UPDATE user SET image_cover = '$fileName' WHERE mail = '$user'");
+                queryMysql("UPDATE user SET image_cover = '$fileName' WHERE username = '$user'");
             }
             header("location: profil.php");
         }
