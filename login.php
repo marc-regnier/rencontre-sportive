@@ -1,4 +1,5 @@
 <?php
+$page = "connexion";
 require_once ('header/header.php');
 
 
@@ -11,7 +12,7 @@ require_once ('header/header.php');
             
             <div class="form-group">
                 <label for="exampleInputEmail1">Username </label>
-                <input type="text" class="form-control" id="exampleInputEmail1" name="username" placeholder="Entez votre username">
+                <input type="text" class="form-control" id="exampleInputEmail1" name="username" placeholder="Entrez votre username">
 
             </div>
             <div class="form-group">

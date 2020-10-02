@@ -1,4 +1,5 @@
 <?php
+$page = "La liste des amis";
 require_once 'header/header.php';
 
 if(!$loggedin){

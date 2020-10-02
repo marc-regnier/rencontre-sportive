@@ -1,5 +1,5 @@
 <?php
-
+$page = "accueil";
 include 'header/header.php';
 
 ?>

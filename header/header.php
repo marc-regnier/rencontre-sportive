@@ -6,6 +6,7 @@ $session->flash();
 session_write_close();
 session_start();
 
+
 require_once ('functions/functions.php');
 
 ?>
@@ -17,7 +18,7 @@ require_once ('functions/functions.php');
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://bootswatch.com/4/flatly/bootstrap.min.css">
     <link rel="stylesheet" href="assets/css/style.css"> 
-    <title>SportBook! - </title>
+    <title>SportBook! - <?= $page ?></title>
 </head>
 
 <body>

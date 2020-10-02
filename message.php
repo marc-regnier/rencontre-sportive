@@ -1,9 +1,12 @@
 <?php
+$page = "Vos messages";
 require_once 'header/header.php';
 
 if(!$loggedin){
     header("location: login.php");
 }
+
+
 
 if(isset($_GET['view'])) $view = security($_GET['view']);
 else $view = $user;

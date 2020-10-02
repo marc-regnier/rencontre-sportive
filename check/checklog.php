@@ -1,6 +1,13 @@
 <?php
-require_once '../functions/functions.php';
 
+require_once ('../class/session.class.php');
+$session = new Session();
+$session->flash();
+session_write_close();
+session_start();
+
+
+require_once ('../functions/functions.php');
 
 
 if (isset($_POST['username'])) {
@@ -8,8 +15,6 @@ if (isset($_POST['username'])) {
     $pass = security($_POST['password']);
 
     if ($username == "" || $pass == ""){
-        require("../class/session.class.php");
-        $session = new Session();
         $session->setFlash('ERREUR ! SVP Veuillez remplir tous les champs du formulaire de connexion');
         header("location: ../login.php");
     }
@@ -22,13 +27,10 @@ if (isset($_POST['username'])) {
         if ($passCorrect) {
             $_SESSION['user'] = $username;
             $_SESSION['password'] = $pass;
-            require("../class/session.class.php");
             $session = new Session();
             $session->setFlash('Vous êtes connecté', 'success');
             header("location: ../profil.php");
         } else {
-            require("../class/session.class.php");
-            $session = new Session();
             $session->setFlash('ERREUR ! Utilisateur ou mot de passe non valide');
             header("location: ../login.php");
         }

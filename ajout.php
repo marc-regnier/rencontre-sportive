@@ -1,6 +1,7 @@
 <?php
 require_once 'header/header.php';
 
+$page = "inscription"
 
 ?>
 

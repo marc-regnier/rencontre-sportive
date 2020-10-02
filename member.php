@@ -1,6 +1,10 @@
 <?php 
+$page = "les membres";
 include ('header/header.php');
 
+if(!$loggedin){
+    header("location: login.php");
+}
 
 ?>
 

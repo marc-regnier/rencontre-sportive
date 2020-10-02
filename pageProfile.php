@@ -1,5 +1,10 @@
 <?php
+$page = "Le profil de " . htmlentities($_GET['username']);
 require_once 'header/header.php';
+
+if(!$loggedin){
+    header("location: login.php");
+}
 
 $view = security($_GET['username']);
 $req = queryMySql("SELECT * FROM user WHERE username = '$view'");

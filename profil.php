@@ -1,5 +1,7 @@
 <?php
+$page = "votre profil";
 require_once 'header/header.php';
+
 
 
 if(!$loggedin){
@@ -7,9 +9,12 @@ if(!$loggedin){
 }
 
 
+
 $req = queryMySql("SELECT * FROM user WHERE username = '$user'");
 $member = $req->fetch();
 $title = ($member['gender'] == 'm') ? 'M.' : 'Mme';
+
+
 
 ?>
 
