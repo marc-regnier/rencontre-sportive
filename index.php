@@ -14,22 +14,21 @@ include 'header/header.php';
 
             <?php
             $req = queryMySql("SELECT name, image FROM sport");
-            while ($sport = $req->fetch()) 
-            {?>
-                
-                    <div class = "col-md-6">
-                            <div class = "row">
-                                <div class="card">
-                                    <img class= "card-img-top" src="../assets/images/sport/<?=  $sport['image']?>" alt="<?= $sport['image']?>">
-                                    <div class=card-body>
-                                        <h4 class="sport-list-title"><?= $sport['name']?></h4>
-                                    </div>
-                                </div>
-                            </div>
-                    </div>
-        <?php } ?>
+            while ($sport = $req->fetch()) { ?>
 
-            
+                <div class="col-md-6">
+                    <div class="row">
+                        <div class="card">
+                            <img class="card-img-top" src="../assets/images/sport/<?= $sport['image'] ?>" alt="<?= $sport['image'] ?>">
+                            <div class=card-body>
+                                <h4 class="sport-list-title"><?= $sport['name'] ?></h4>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            <?php } ?>
+
+
         </div>
 
         </div>

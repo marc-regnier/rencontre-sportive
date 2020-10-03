@@ -1,7 +1,8 @@
 <?php
+$page = "inscription";
 require_once 'header/header.php';
 
-$page = "inscription"
+
 
 ?>
 
@@ -23,7 +24,7 @@ $page = "inscription"
 
 <div class="form-group">
     <label for="exampleInputPassword1">Prénom :</label>
-    <input type="text" name="firstname" class="form-control" id="exampleInputPassword1" placeholder="prenom">
+    <input type="text" name="firstname" class="form-control" id="exampleInputPassword1" placeholder="prénom">
 </div>
 
 <div class="form-group">
@@ -33,12 +34,12 @@ $page = "inscription"
 
 <div class="form-group">
     <label for="exampleInputPassword1">Username :</label>
-    <input type="text" name="username" class="form-control" id="exampleInputPassword1" placeholder="email">
+    <input type="text" name="username" class="form-control" id="exampleInputPassword1" placeholder="username ex: marcopolo...">
 </div>
 
 <div class="form-group">
     <label for="exampleInputPassword1">Mot de Passe :</label>
-    <input type="password" name="password" class="form-control" id="exampleInputPassword1" placeholder="mot de passe">
+    <input type="password" name="password" class="form-control" minlength="6" maxlength="16" id="exampleInputPassword1" placeholder="mot de passe">
 </div>
 
 <div class="form-group">

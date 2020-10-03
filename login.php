@@ -25,8 +25,7 @@ require_once ('header/header.php');
     </form>
 </div>
 
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-<script src="assets/js/app.js"></script>
+
 <?php
 require_once ('header/footer.php');
 ?>

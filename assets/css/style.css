@@ -1,4 +1,5 @@
 body{
+    
     background-image: url('../images/sport/sport.jpg');
     background-position: center center fixed;
     background-repeat: no-repeat;
@@ -73,5 +74,25 @@ footer
     background-color: white;
 }
 
+.member{
+    text-align: center;
+    margin: 15px;
+}
 
+@media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
+
+    .member{
+        display: flex;
+        justify-content: center;
+        margin: 25px;
+    }
+}
+
+@media only screen and (min-device-width : 768px) and (max-device-width : 1024px) {
     
+    .card-member{
+        display: flex;
+        justify-content: center;
+        margin-left: 75px;
+    }
+}

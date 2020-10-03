@@ -5,7 +5,6 @@ require_once 'functions/functions.php';
 
 if(isset($_SESSION['user'])){
     destroySession();
-    
     $session->setFlash('Vous êtes déconnecté', 'success');
     header('location: login.php');
 }else{
