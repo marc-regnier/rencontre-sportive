@@ -7,6 +7,7 @@ if (!$loggedin) {
 }
 
 $view = security($_GET['username']);
+
 $req = queryMySql("SELECT * FROM user WHERE username = '$view'");
 $member = $req->fetch();
 

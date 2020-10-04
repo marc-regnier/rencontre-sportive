@@ -11,17 +11,18 @@ $password = security($_POST['password']);
 $gender = $_POST['sexe'];
 $sport = $_POST['sport'];
 $level = $_POST['level'];
-$fileName = basename($_FILES["image"]["name"]);
+$filename = basename($_FILES["image"]["name"]);
 
+$today = date("Y-m-d H:i:s");
 
 if (
     isset($name) && !empty($name) && isset($firstname) && !empty($firstname) && isset($department) && !empty($department) && isset($username) && !empty($username) && isset($password) && !empty($password)
-    && isset($gender) && !empty($gender) && isset($fileName) && !empty($fileName) && isset($sport) && !empty($sport) && isset($level) && !empty($level)
+    && isset($gender) && !empty($gender) && isset($filename) && !empty($filename) && isset($sport) && !empty($sport) && isset($level) && !empty($level)
 ) {
 
 
     $targetDir = "../assets/images/uploads/";
-    $targetFilePath = $targetDir . $fileName;
+    $targetFilePath = $targetDir . $filename;
     $fileType = pathinfo($targetFilePath, PATHINFO_EXTENSION);
 
     $allowTypes = array('jpg', 'png', 'jpeg', 'gif');
@@ -30,9 +31,10 @@ if (
         if (move_uploaded_file($_FILES["image"]["tmp_name"], $targetFilePath)) {
 
             $password_crypt = password_hash($password, PASSWORD_DEFAULT);
+            
 
-            queryMySql("INSERT INTO user (lastname, firstname, department, username, password, image_cover, gender, id_niveau, id_sport) 
-            VALUES('$name', '$firstname', '$department', '$username', '$password_crypt', '$fileName', '$gender', '$level', '$sport')");
+            queryMySql("INSERT INTO user (lastname, firstname, department, username, password, image_cover, gender, id_niveau, id_sport, created_at) 
+            VALUES('$name', '$firstname', '$department', '$username', '$password_crypt', '$filename', '$gender', '$level', '$sport', '$today')");
         }
         require("../class/session.class.php");
         $session = new Session();
@@ -40,7 +42,7 @@ if (
         header("location: ../login.php");
     }
 } else if (
-    $gender == "m" && empty($fileName) && isset($name) && !empty($name) && isset($firstname) && !empty($firstname) && isset($department) && !empty($department) && isset($username) && !empty($username) && isset($password) && !empty($password)
+    $gender == "m" && empty($filename) && isset($name) && !empty($name) && isset($firstname) && !empty($firstname) && isset($department) && !empty($department) && isset($username) && !empty($username) && isset($password) && !empty($password)
     && isset($sport) && !empty($sport) && isset($level) && !empty($level)
 ) {
     $filename = "masculin_default.jpg";
@@ -48,22 +50,23 @@ if (
     $password_crypt = password_hash($password, PASSWORD_DEFAULT);
 
 
-    queryMySql("INSERT INTO user (lastname, firstname, department, username, password, image_cover, gender, id_niveau, id_sport)
-     VALUES('$name', '$firstname', '$department', '$username', '$password_crypt', '$filename', '$gender', '$level', '$sport')");
+    queryMySql("INSERT INTO user (lastname, firstname, department, username, password, image_cover, gender, id_niveau, id_sport, created_at)
+     VALUES('$name', '$firstname', '$department', '$username', '$password_crypt', '$filename', '$gender', '$level', '$sport', '$today')");
     require("../class/session.class.php");
     $session = new Session();
     $session->setFlash('Votre inscription a été prise en compte', 'success');
     header("location: ../login.php");
 } else if (
-    $gender == "f" && empty($fileName) && isset($name) && !empty($name) && isset($firstname) && !empty($firstname) && isset($department) && !empty($department) && isset($username) && !empty($username) && isset($password) && !empty($password)
+    $gender == "f" && empty($filename) && isset($name) && !empty($name) && isset($firstname) && !empty($firstname) && isset($department) && !empty($department) && isset($username) && !empty($username) && isset($password) && !empty($password)
     && isset($sport) && !empty($sport) && isset($level) && !empty($level)
 ) {
-    $fileName = "feminin_default.jpg";
+    $filename = "feminin_default.jpg";
 
     $password_crypt = password_hash($password, PASSWORD_DEFAULT);
 
-    queryMySql("INSERT INTO user (lastname, firstname, department, username, password, image_cover, gender, id_niveau, id_sport)
-             VALUES('$name', '$firstname', '$department', '$username', '$password_crypt', '$fileName', '$gender', '$level', '$sport')");
+    queryMySql("INSERT INTO user (lastname, firstname, department, username, password, image_cover, gender, id_niveau, id_sport, created_at)
+             VALUES('$name', '$firstname', '$department', '$username', '$password_crypt', '$filename', '$gender', '$level', '$sport', '$today')");
+             
     require("../class/session.class.php");
     $session = new Session();
     $session->setFlash('Votre inscription a été prise en compte', 'success');
