@@ -29,7 +29,7 @@ require_once 'header/header.php';
 
 <div class="form-group">
     <label for="exampleInputEmail1">Département :</label>
-    <input type="text" class="form-control" name="department" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="departement">    
+    <input type="text" class="form-control" name="department" id="exampleInputEmail1" minlength="2" maxlength="2" aria-describedby="emailHelp" placeholder="departement">    
 </div>
 
 <div class="form-group">

@@ -50,7 +50,7 @@ echo "<br><div class = 'container list-friend'>";
 if(sizeof($mutual)){
     echo "<span class='subhead'>$name2 amis réciproques :</span><ul>";
     foreach ($mutual as $friend)
-        echo "<li><a href='member.php?view=$friend'>$friend</a>";
+        echo "<li><a href='pageProfile.php?username=$friend'>$friend</a>";
         echo "</ul>";
         $friends = TRUE;
 }
@@ -58,7 +58,7 @@ if(sizeof($mutual)){
 else if(sizeof($followers)){
     echo "<span class='subhead'>$name2 suiveurs :</span><ul>";
     foreach ($followers as $friend)
-        echo "<li><a href='member.php?view=$friend'>$friend</a>";
+        echo "<li><a href='pageProfile.php?username=$friend'>$friend</a>";
         echo "</ul>";
         $friends = TRUE;
 }
@@ -66,7 +66,7 @@ else if(sizeof($followers)){
 else if(sizeof($following)){
     echo "<span class='subhead'>$name3 suivez :</span><ul>";
     foreach ($following as $friend)
-        echo "<li><a href='member.php?view=$friend'>$friend</a>";
+        echo "<li><a href='pageProfile.php?username=$friend'>$friend</a>";
         echo "</ul>";
         $friends = TRUE;
 }

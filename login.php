@@ -19,8 +19,9 @@ require_once ('header/header.php');
                 <label for="exampleInputPassword1">Mot de passe</label>
                 <input type="password" class="form-control" id="exampleInputPassword1" name="password" placeholder="Saisir votre mot de passe">
             </div>
-            <input class="btn btn-primary" type="submit"  value="Je me connecte">
-
+            <div class="button">
+                <input class="btn btn-primary" type="submit"  value="Je me connecte">
+            </div>
         </fieldset>
     </form>
 </div>
