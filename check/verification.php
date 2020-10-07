@@ -3,6 +3,7 @@
 require_once '../functions/functions.php';
 
 
+
 $name = security($_POST['name']);
 $firstname = security($_POST['firstname']);
 $department = security($_POST['department']);
@@ -15,11 +16,22 @@ $filename = basename($_FILES["image"]["name"]);
 
 $today = date("Y-m-d H:i:s");
 
+
+
 if (
     isset($name) && !empty($name) && isset($firstname) && !empty($firstname) && isset($department) && !empty($department) && isset($username) && !empty($username) && isset($password) && !empty($password)
     && isset($gender) && !empty($gender) && isset($filename) && !empty($filename) && isset($sport) && !empty($sport) && isset($level) && !empty($level)
 ) {
 
+    $result = queryMySql("SELECT * FROM user WHERE username ='$username'");
+    
+
+    if($result->rowCount()){
+        require("../class/session.class.php");
+        $session = new Session();
+        $session->setFlash('Ce username existe déjà');
+        header("location: ../ajout.php");
+    }
 
     $targetDir = "../assets/images/uploads/";
     $targetFilePath = $targetDir . $filename;
@@ -45,6 +57,17 @@ if (
     $gender == "m" && empty($filename) && isset($name) && !empty($name) && isset($firstname) && !empty($firstname) && isset($department) && !empty($department) && isset($username) && !empty($username) && isset($password) && !empty($password)
     && isset($sport) && !empty($sport) && isset($level) && !empty($level)
 ) {
+
+    $result = queryMySql("SELECT * FROM user WHERE username ='$username'");
+
+
+    if ($result->rowCount()) {
+        require("../class/session.class.php");
+        $session = new Session();
+        $session->setFlash('Ce username existe déjà');
+        header("location: ../ajout.php");
+    }
+
     $filename = "masculin_default.jpg";
 
     $password_crypt = password_hash($password, PASSWORD_DEFAULT);
@@ -60,6 +83,17 @@ if (
     $gender == "f" && empty($filename) && isset($name) && !empty($name) && isset($firstname) && !empty($firstname) && isset($department) && !empty($department) && isset($username) && !empty($username) && isset($password) && !empty($password)
     && isset($sport) && !empty($sport) && isset($level) && !empty($level)
 ) {
+
+    $result = queryMySql("SELECT * FROM user WHERE username ='$username'");
+
+
+    if ($result->rowCount()) {
+        require("../class/session.class.php");
+        $session = new Session();
+        $session->setFlash('Ce username existe déjà');
+        header("location: ../ajout.php");
+    }
+
     $filename = "feminin_default.jpg";
 
     $password_crypt = password_hash($password, PASSWORD_DEFAULT);

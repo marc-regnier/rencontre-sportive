@@ -19,7 +19,7 @@ include 'header/header.php';
                 <div class="col-md-6">
                     <div class="row">
                         <div class="card">
-                            <img class="card-img-top" src="../assets/images/sport/<?= $sport['image'] ?>" alt="<?= $sport['image'] ?>">
+                            <img class="card-img-top" src="assets/images/sport/<?= $sport['image'] ?>" alt="<?= $sport['image'] ?>">
                             <div class=card-body>
                                 <h4 class="sport-list-title"><?= $sport['name'] ?></h4>
                             </div>

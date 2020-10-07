@@ -2,6 +2,7 @@
 require_once 'vendor/autoload.php';
 require 'functions/functions.php';
 
+
 $faker = Faker\Factory::create("fr_FR");
 
 $gender = ['m', 'f'];

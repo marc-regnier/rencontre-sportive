@@ -1,6 +1,6 @@
 <?php
 try{
-    $bdd = new PDO('mysql:host=localhost;dbname=reseau_sport;charset=utf8;port=3308', 'root', '');
+    $bdd = new PDO('mysql:host=localhost;dbname=sport;charset=utf8;port=3306', 'root', ' ');
 }
 catch(Exception $e){
     die('Erreur : '.$e->getMessage());

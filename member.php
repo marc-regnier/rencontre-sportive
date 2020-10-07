@@ -47,7 +47,7 @@ $members = $query->fetchAll(PDO::FETCH_ASSOC);
                 <div class="card-member col-md-4 mt-5">
                     <div class="row">
                         <div class="card card-img " style="width : 18rem; ">
-                            <img class="card-img-top" style="height : 250px;" src="../assets/images/uploads/<?= $member['image_cover'] ?>" alt="Card image cap">
+                            <img class="card-img-top" style="height : 250px;" src="assets/images/uploads/<?= $member['image_cover'] ?>" alt="Card image cap">
                             <div class="card-body">
                                 <h5 class="card-title"><?= $member['lastname'] ?> <?= $member['firstname'] ?></h5>
                                 <p class="card-text "><?= $member['name'] ?> - <?= $member['niveau'] ?></p>

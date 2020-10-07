@@ -28,3 +28,26 @@ $(function(){
     }
 });
 
+$("#username").keyup(function () {
+
+    var username = $(this).val().trim();
+
+    if (username != '') {
+
+        $.ajax({
+            url: '../../check/checkuser.php',
+            type: 'post',
+            data: { username: username },
+            success: function (response) {
+
+                // Show response
+                $("#info").html(response);
+
+            }
+        });
+    } else {
+        $("#info").html("");
+    }
+
+});
+
